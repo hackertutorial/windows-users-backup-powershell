@@ -1,0 +1,13 @@
+$Source = "C:\Users\$env:USERNAME"
+$Destination = "E:\Zalohy\$env:USERNAME"
+
+$Folders = @(
+    "Desktop",
+    "Documents",
+    "Pictures",
+    "Downloads"
+)
+
+foreach ($Folder in $Folders) {
+    robocopy "$Source\$Folder" "$Destination\$Folder" /MIR /R:1 /W:1
+}
